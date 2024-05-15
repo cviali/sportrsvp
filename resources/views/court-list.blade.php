@@ -1,7 +1,7 @@
 @extends('admin_template')
 
 @php
-$page_title = 'Home'
+$page_title = 'Courts'
 @endphp
 
 @section('style')
@@ -10,7 +10,7 @@ $page_title = 'Home'
 @section('content')
 <div class='row'>
     <div class="col-6">
-        home
+        court list
     </div>
 </div>
 @endsection

@@ -15,7 +15,10 @@ class CreateCourtsTable extends Migration
     {
         Schema::create('courts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name')->unique();
+            $table->string('type_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

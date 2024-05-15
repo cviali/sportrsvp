@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/reservations', 'ReservationController@index')->name('reservation-list');
+Route::get('/courts', 'CourtController@index')->name('court-list');
 
 Route::get('admin', function () {
     return view('admin_template');
