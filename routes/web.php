@@ -21,10 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/reservations', 'ReservationController@index')->name('reservation-list');
 Route::get('/courts', 'CourtController@index')->name('court-list');
 
-Route::get('admin', function () {
-    return view('admin_template');
-});
-
-Route::get('test', function () {
-    return view('test');
-});
+Route::post('/add-court', 'CourtController@addCourt')->name('add-court');

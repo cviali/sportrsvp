@@ -16,13 +16,21 @@ $page_title = 'Reservations'
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <label>Reservation Date:</label>
+                    <label>Reservation Date</label>
                     <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime" />
+                        <input name="date" type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime" />
                         <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label for="selectCourt">Court</label>
+                    <select class="custom-select" name="court" id="selectCourt">
+                        @foreach($courts as $court)
+                        <option value="{{ $court->id }}">{{ $court->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
         </div>
@@ -37,8 +45,9 @@ $page_title = 'Reservations'
             icons: {
                 time: 'far fa-clock'
             },
-            format: 'ddd/MM/YYYY HH:mm',
-            disabledHours: [23, 24, 0, 1, 2, 3, 4, 5]
+            format: 'dddd/MM/YYYY HH:mm',
+            disabledHours: [23, 24, 0, 1, 2, 3, 4, 5],
+            stepping: 60
         })
     })
 </script>

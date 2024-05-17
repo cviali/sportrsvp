@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('bower_components/admin-lte/plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('bower_components/admin-lte/dist/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('bower_components/admin-lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bower_components/admin-lte/plugins/toastr/toastr.min.css') }}">
     @yield('style')
 </head>
 
@@ -39,6 +40,7 @@
     <script src="{{ asset('bower_components/admin-lte/dist/js/adminlte.min.js') }}"></script>
     <script src="{{ asset('bower_components/admin-lte/plugins/moment/moment.min.js') }}"></script>
     <script src="{{ asset('bower_components/admin-lte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+    <script src="{{ asset('bower_components/admin-lte/plugins/toastr/toastr.min.js') }}"></script>
     @yield('script')
 </body>
 
