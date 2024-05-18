@@ -25,7 +25,8 @@ class CourtController extends Controller
     public function index()
     {
         $courts = Court::where('deleted_at', '=', null)->get();
-        // dd($courts);
-        return view('court-list', compact(['courts']));
+        $court_types = Type::all();
+        // dd($court_types);
+        return view('court-list', compact(['courts', 'court_types']));
     }
 }

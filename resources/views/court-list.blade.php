@@ -29,8 +29,9 @@ $page_title = 'Courts'
                     <div class="form-group">
                         <label for="inputCourtType">Court Type</label>
                         <select class="custom-select" id="inputCourtType" name="type">
-                            <option value="1">Badminton</option>
-                            <option value="2">Tennis</option>
+                            @foreach($court_types as $type)
+                            <option value="{{ $type->id }}">{{ $type->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>

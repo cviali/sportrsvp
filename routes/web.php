@@ -22,3 +22,4 @@ Route::get('/reservations', 'ReservationController@index')->name('reservation-li
 Route::get('/courts', 'CourtController@index')->name('court-list');
 
 Route::post('/add-court', 'CourtController@addCourt')->name('add-court');
+Route::post('/add-reservation', 'ReservationController@addReservation')->name('add-reservation');
