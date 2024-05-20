@@ -9,7 +9,7 @@ $page_title = 'Courts'
 
 @section('content')
 <div class='row'>
-    <div class="col-12 col-md-6">
+    <div class="col-12">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">New Court</h3>
@@ -41,7 +41,7 @@ $page_title = 'Courts'
             </form>
         </div>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Court List</h3>
@@ -72,15 +72,4 @@ $page_title = 'Courts'
         </div>
     </div>
 </div>
-@endsection
-
-@section('script')
-
-@if (session()->has('msg'))
-<script>
-    $(function() {
-        toastr.success('{!! session()->get("msg") !!}')
-    })
-</script>
-@endif
 @endsection

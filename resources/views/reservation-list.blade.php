@@ -9,7 +9,7 @@ $page_title = 'Reservations'
 
 @section('content')
 <div class='row'>
-    <div class='col-12 col-md-6'>
+    <div class='col-12'>
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">New Reservation</h3>
@@ -21,6 +21,14 @@ $page_title = 'Reservations'
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
+                        <label for="selectCourt">Court</label>
+                        <select class="custom-select" name="court_id" id="selectCourt">
+                            @foreach($courts as $court)
+                            <option value="{{ $court->id }}">{{ $court->types->first()->name }} {{ $court->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label>Reservation Date</label>
                         <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
                             <input name="date" type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime" />
@@ -30,12 +38,13 @@ $page_title = 'Reservations'
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="selectCourt">Court</label>
-                        <select class="custom-select" name="court_id" id="selectCourt">
-                            @foreach($courts as $court)
-                            <option value="{{ $court->id }}">{{ $court->types->first()->name }} {{ $court->name }}</option>
-                            @endforeach
-                        </select>
+                        <label for="duration">Duration</label>
+                        <div class="input-group">
+                            <input type="number" min="0" name="duration" class="form-control" id="duration" placeholder="Enter duration in hour(s)">
+                            <div class="input-group-append">
+                                <span class="input-group-text">hour(s)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="card-footer">
@@ -44,13 +53,13 @@ $page_title = 'Reservations'
             </form>
         </div>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Reservation List</h3>
             </div>
             <div class="card-body p-0">
-                <table class="table">
+                <table class="table table-hover">
                     <thead>
                         <tr>
                             <th style="width: 10px;">#</th>
@@ -63,13 +72,33 @@ $page_title = 'Reservations'
                     </thead>
                     <tbody>
                         @foreach($reservations as $reservation)
-                        <tr>
+                        <tr role="button" class="table-button" data-href="detail/{{ $reservation->id }}">
                             <td>{{ $reservation->id }}</td>
                             <td>{{ Court::where('id', $reservation->court_id)->first()->name }}</td>
                             <td>{{ User::where('id', $reservation->user_id)->first()->name }}</td>
                             <td>{{ $reservation->reservation_date }}</td>
                             <td>{{ $reservation->duration }} hour(s)</td>
-                            <td>{{ $reservation->status_id }}</td>
+                            <td>
+                                @switch($reservation->status_id)
+                                @case(0)
+                                <span class="badge bg-info">Pending</span>
+                                @break
+                                @case(1)
+                                <span class="badge bg-primary">Approved</span>
+                                @break
+                                @case(2)
+                                <span class="badge bg-success">Checked In</span>
+                                @break
+                                @case(3)
+                                <span class="badge bg-danger">Cancelled</span>
+                                @break
+                                @case(4)
+                                <span class="badge bg-secondary">Finished</span>
+                                @break
+                                @default
+                                'asd'
+                                @endswitch
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -83,14 +112,12 @@ $page_title = 'Reservations'
 
 @section('script')
 
-@if (session()->has('msg'))
-<script>
-    toastr.success('{!! session()->get("msg") !!}')
-</script>
-@endif
-
 <script>
     $(function() {
+        $('.table-button').click(function() {
+            window.location = $(this).data('href');
+            return false;
+        });
         $('#reservationdatetime').datetimepicker({
             icons: {
                 time: 'far fa-clock'

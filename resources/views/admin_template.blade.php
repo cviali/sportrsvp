@@ -41,7 +41,15 @@
     <script src="{{ asset('bower_components/admin-lte/plugins/moment/moment.min.js') }}"></script>
     <script src="{{ asset('bower_components/admin-lte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
     <script src="{{ asset('bower_components/admin-lte/plugins/toastr/toastr.min.js') }}"></script>
+
+    @if (session()->has('msg'))
+    <script>
+        toastr.success('{!! session()->get("msg") !!}')
+    </script>
+    @endif
+
     @yield('script')
+
 </body>
 
 </html>
