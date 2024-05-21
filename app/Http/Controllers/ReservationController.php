@@ -17,7 +17,7 @@ class ReservationController extends Controller
             'court_id' => $request->court_id,
             'user_id' => Auth::user()->id,
             'reservation_date' => Carbon::parse($request->date),
-            'duration' => 0,
+            'duration' => $request->duration,
             'status_id' => 0
         ]);
 

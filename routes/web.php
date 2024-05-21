@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/reservations', 'ReservationController@index')->name('reservation-list');
 Route::get('/detail/{id}', 'ReservationDetailController@index')->name('reservation-detail');
+Route::get('/update-status/{id}/{status_id}', 'ReservationDetailController@updateStatus')->name('update-status');
 Route::get('/courts', 'CourtController@index')->name('court-list');
 
 Route::post('/add-court', 'CourtController@addCourt')->name('add-court');
