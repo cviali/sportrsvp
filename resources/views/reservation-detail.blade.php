@@ -3,6 +3,7 @@
 @php
 use App\User;
 use App\Court;
+use App\Reservation;
 use Carbon\Carbon;
 $page_title = 'Reservation Detail'
 @endphp
@@ -50,7 +51,11 @@ $page_title = 'Reservation Detail'
                 <a href="/update-status/{{ $reservation->id }}/4" type="submit" class="btn btn-secondary">Cancel</a>
                 @break
                 @case(1)
+                @if(Reservation::where([['court_id', '=', $reservation->court_id], ['status_id', '=', 2]])->first())
+                <div>This court is currently being reserved by other customer.</div>
+                @else
                 <a href="/update-status/{{ $reservation->id }}/2" type="submit" class="btn btn-success">Check in</a>
+                @endif
                 @break
                 @case(2)
                 <a href="/update-status/{{ $reservation->id }}/4" type="submit" class="btn btn-secondary">Cancel</a>

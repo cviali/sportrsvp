@@ -1,6 +1,7 @@
 @extends('admin_template')
 
 @php
+use App\Reservation;
 $page_title = 'Courts'
 @endphp
 
@@ -62,7 +63,13 @@ $page_title = 'Courts'
                             <td>{{ $court->id }}</td>
                             <td>{{ $court->name }}</td>
                             <td>{{ $court->types->first()->name }}</td>
-                            <td>-</td>
+                            <td>
+                                @if(Reservation::where([['court_id', '=', $court->id], ['status_id', '=', 2]])->first())
+                                <span class="badge bg-success">In Use</span>
+                                @else
+                                <span class="badge bg-secondary">Free</span>
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
