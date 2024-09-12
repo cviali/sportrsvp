@@ -12,6 +12,10 @@ class ReservationController extends Controller
 {
     public function addReservation(Request $request)
     {
+        $this->validate($request, [
+            'duration' => 'required|numeric|min:1'
+        ]);
+
         // dd(Carbon::parse($request->date));
         Reservation::create([
             'court_id' => $request->court_id,
