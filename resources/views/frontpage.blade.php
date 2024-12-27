@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html lang="en">
 
     <head>
@@ -22,13 +18,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="wrapper">
             <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
                 <div class="container">
-                    <a href="{{ route('homepage') }}" class="navbar-brand">
-                        <span class="brand-text font-weight-light">Velocity Arena</span>
-                    </a>
-                    <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    <button class="navbar-toggler order-0 mr-3" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <a href="{{ route('homepage') }}" class="navbar-brand">
+                        <span class="brand-text font-weight-light">Velocity Arena</span>
+                    </a>
                     <div class="collapse navbar-collapse order-3" id="navbarCollapse">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
