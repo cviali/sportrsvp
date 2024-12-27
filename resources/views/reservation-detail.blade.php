@@ -11,7 +11,7 @@
 @section('content')
     <div class='row'>
         <div class="col-12 pb-3">
-            <a href="/reservations"><i class="fas fa-arrow-left mr-2"></i>Back</a>
+            <a href="{{ Request::get('from') == 'home' ? '/home' : '/reservations' }}"><i class="fas fa-arrow-left mr-2"></i>Back</a>
         </div>
         <div class="col-12">
             <div class="card">

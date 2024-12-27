@@ -11,9 +11,24 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('homepage');
+
+Route::get('/badminton', function () {
+    return view('badminton');
+})->name('badminton');
+
+Route::get('/tennis', function () {
+    return view('tennis');
+})->name('tennis');
+
+Route::get('/padel', function () {
+    return view('padel');
+})->name('padel');
 
 Auth::routes();
 

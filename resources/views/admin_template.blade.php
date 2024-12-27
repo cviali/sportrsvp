@@ -12,6 +12,7 @@
         <link rel="stylesheet"
             href="{{ asset('bower_components/admin-lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
         <link rel="stylesheet" href="{{ asset('bower_components/admin-lte/plugins/toastr/toastr.min.css') }}">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         @yield('style')
     </head>
 
