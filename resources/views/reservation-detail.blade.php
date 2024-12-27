@@ -61,18 +61,19 @@
                         </div>
                     @else
                         <a href="/update-status/{{ $reservation->id }}/2" type="submit" class="btn btn-success">Check in</a>
-                        @endif
-                    @break
+                    </div>
+                    @endif
+                @break
 
-                    @case(2)
-                        <div class="card-footer">
-                            <a href="/update-status/{{ $reservation->id }}/4" type="submit" class="btn btn-info">Finish Reservation</a>
-                            <a href="/update-status/{{ $reservation->id }}/3" type="submit" class="btn btn-danger">Cancel Reservation</a>
-                        </div>
-                    @break
-                @endswitch
-            </div>
+                @case(2)
+                    <div class="card-footer">
+                        <a href="/update-status/{{ $reservation->id }}/4" type="submit" class="btn btn-info">Finish Reservation</a>
+                        <a href="/update-status/{{ $reservation->id }}/3" type="submit" class="btn btn-danger">Cancel Reservation</a>
+                    </div>
+                @break
+            @endswitch
         </div>
+    </div>
     </div>
 @endsection
 
