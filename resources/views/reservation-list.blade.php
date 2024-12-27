@@ -76,7 +76,7 @@
                             <label for="selectCourt">Court</label>
                             <select class="custom-select" name="court_id" id="selectCourt">
                                 @foreach ($courts as $court)
-                                    <option value="{{ $court->id }}">{{ $court->name }}</option>
+                                    <option value="{{ $court->id }}">{{ $court->types->first()->name }} | {{ $court->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -93,7 +93,7 @@
                             <label for="duration">Duration</label>
                             <div class="input-group">
                                 <input type="number" min="0" name="duration" class="form-control" id="duration"
-                                    placeholder="Enter duration in hour(s)" required>
+                                    placeholder="Enter duration in hour(s)">
                                 <div class="input-group-append">
                                     <span class="input-group-text">hour(s)</span>
                                 </div>
