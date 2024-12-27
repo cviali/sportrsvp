@@ -11,6 +11,26 @@
         <link rel="stylesheet"
             href="{{ asset('bower_components/admin-lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
         <link rel="stylesheet" href="{{ asset('bower_components/admin-lte/plugins/toastr/toastr.min.css') }}">
+        <style>
+            .floating {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 40px;
+                right: 40px;
+                background-color: #25d366;
+                color: #fff;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 2px 2px 3px #999;
+                z-index: 100;
+            }
+
+            .fab-icon {
+                margin-top: 16px;
+            }
+        </style>
         @yield('style')
     </head>
 
@@ -47,6 +67,10 @@
                     </ul>
                 </div>
             </nav>
+            <a href="https://wa.me/6281808267880?text=Hallo%20Admin%20Velocity%20Arena,%20Saya%20mau%20pesan%20lapangan" class="floating"
+                target="_blank">
+                <i class="fab fa-whatsapp fab-icon"></i>
+            </a>
             @yield('content')
             <footer class="main-footer">
                 <strong>Copyright &copy; 2024 Velocity Arena</strong>
