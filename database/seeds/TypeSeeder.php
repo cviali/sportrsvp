@@ -18,5 +18,8 @@ class TypeSeeder extends Seeder
         $tennis = new Type();
         $tennis->name = 'Tennis';
         $tennis->save();
+        $tennis = new Type();
+        $tennis->name = 'Padel';
+        $tennis->save();
     }
 }
