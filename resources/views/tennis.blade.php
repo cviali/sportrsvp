@@ -78,7 +78,7 @@
     <div class="content-wrapper">
         <div class="content-header p-0">
             <div class="container-fluid p-0">
-                <img class="header-image w-100" src="{{ asset('tennis.jpeg') }}" />
+                <img class="header-image w-100" src="{{ asset('tennis.jpg') }}" />
             </div>
         </div>
         <div class="content content-overlap">
@@ -93,9 +93,8 @@
                                 <div class="court-select">
                                     <div>Select Court:</div>
                                     <select id="courtSelect" class="form-control w-auto">
-                                        <option value="court1">Court 1</option>
-                                        <option value="court2">Court 2</option>
-                                        <option value="court3">Court 3</option>
+                                        <option value="court1">Tennis 1</option>
+                                        <option value="court2">Tennis 2</option>
                                     </select>
                                 </div>
                                 <div class="calendar w-100" id="calendar"></div>

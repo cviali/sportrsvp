@@ -78,7 +78,7 @@
     <div class="content-wrapper">
         <div class="content-header p-0">
             <div class="container-fluid p-0">
-                <img class="header-image w-100" src="{{ asset('padel.webp') }}" />
+                <img class="header-image w-100" src="{{ asset('padel.jpg') }}" />
             </div>
         </div>
         <div class="content content-overlap">
@@ -93,9 +93,12 @@
                                 <div class="court-select">
                                     <div>Select Court:</div>
                                     <select id="courtSelect" class="form-control w-auto">
-                                        <option value="court1">Court 1</option>
-                                        <option value="court2">Court 2</option>
-                                        <option value="court3">Court 3</option>
+                                        <option value="court1">Padel 1</option>
+                                        <option value="court2">Padel 2</option>
+                                        <option value="court3">Padel 3</option>
+                                        <option value="court3">Padel 4</option>
+                                        <option value="court3">Padel 5</option>
+                                        <option value="court3">Padel VIP</option>
                                     </select>
                                 </div>
                                 <div class="calendar w-100" id="calendar"></div>

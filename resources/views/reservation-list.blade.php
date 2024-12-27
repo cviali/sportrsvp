@@ -68,9 +68,6 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">New Reservation</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                    </div>
                 </div>
                 <form role="form" method="POST" action="{{ route('add-reservation') }}">
                     @csrf
@@ -79,7 +76,7 @@
                             <label for="selectCourt">Court</label>
                             <select class="custom-select" name="court_id" id="selectCourt">
                                 @foreach ($courts as $court)
-                                    <option value="{{ $court->id }}">{{ $court->types->first()->name }} {{ $court->name }}</option>
+                                    <option value="{{ $court->id }}">{{ $court->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -96,7 +93,7 @@
                             <label for="duration">Duration</label>
                             <div class="input-group">
                                 <input type="number" min="0" name="duration" class="form-control" id="duration"
-                                    placeholder="Enter duration in hour(s)">
+                                    placeholder="Enter duration in hour(s)" required>
                                 <div class="input-group-append">
                                     <span class="input-group-text">hour(s)</span>
                                 </div>

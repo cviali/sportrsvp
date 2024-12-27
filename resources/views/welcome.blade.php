@@ -14,7 +14,7 @@
         <div class="content">
             <div class="row py-5">
                 <div class="col-lg-12 text-center">
-                    <h1>Welcome to SportRSVP</h1>
+                    <h1>Welcome to Velocity Arena</h1>
                     <p class="lead">Enjoy a professional grade courts for badminton, tennis, and padel.</p>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                             <div class="card-header">
                                 <h5 class="card-title m-0">Badminton</h5>
                             </div>
-                            <img class="w-100 court-image" src="{{ asset('badminton.jpeg') }}" />
+                            <img class="w-100 court-image" src="{{ asset('badminton.jpg') }}" />
                             <div class="card-body">
                                 <p class="card-text">Reserve a premium badminton court with professional flooring.</p>
                                 <a href="{{ route('badminton') }}" class="btn btn-primary">Schedule</a>
@@ -48,7 +48,7 @@
                             <div class="card-header">
                                 <h5 class="card-title m-0">Tennis</h5>
                             </div>
-                            <img class="w-100 court-image" src="{{ asset('tennis.jpeg') }}" />
+                            <img class="w-100 court-image" src="{{ asset('tennis.jpg') }}" />
                             <div class="card-body">
                                 <p class="card-text">Play on high-quality tennis courts perfect for singles or doubles.</p>
                                 <a href="{{ route('tennis') }}" class="btn btn-primary">Schedule</a>
@@ -60,7 +60,7 @@
                             <div class="card-header">
                                 <h5 class="card-title m-0">Padel</h5>
                             </div>
-                            <img class="w-100 court-image" src="{{ asset('padel.webp') }}" />
+                            <img class="w-100 court-image" src="{{ asset('padel.jpg') }}" />
                             <div class="card-body">
                                 <p class="card-text">Enjoy a fun padel game on modern, high-quality courts.</p>
                                 <a href="{{ route('padel') }}" class="btn btn-primary">Schedule</a>

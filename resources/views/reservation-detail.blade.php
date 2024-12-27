@@ -23,7 +23,6 @@
                     @case(3)bg-danger @break 
                     @case(4)bg-secondary @break 
                 @endswitch">
-
                     <h3 class="card-title">{{ Court::where('id', '=', $reservation->court_id)->first()->name }} -
                         {{ User::where('id', '=', $reservation->user_id)->first()->name }} -
                         {{ Carbon::parse($reservation->reservation_date)->format('d M Y - H:i') }}</h3>
@@ -61,15 +60,14 @@
                                 <div>This court is currently being reserved by other customer.</div>
                         </div>
                     @else
-                        <div class="card-footer">
-                            <a href="/update-status/{{ $reservation->id }}/2" type="submit" class="btn btn-success">Check in</a>
-                        </div>
+                        <a href="/update-status/{{ $reservation->id }}/2" type="submit" class="btn btn-success">Check in</a>
                         @endif
                     @break
 
                     @case(2)
                         <div class="card-footer">
-                            <a href="/update-status/{{ $reservation->id }}/4" type="submit" class="btn btn-secondary">Cancel</a>
+                            <a href="/update-status/{{ $reservation->id }}/4" type="submit" class="btn btn-info">Finish Reservation</a>
+                            <a href="/update-status/{{ $reservation->id }}/3" type="submit" class="btn btn-danger">Cancel Reservation</a>
                         </div>
                     @break
                 @endswitch
